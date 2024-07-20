@@ -6,15 +6,15 @@ import CustomModel from "./CustomModel";
 import { Link } from "react-router-dom";
 
 function Read() {
-  const [id, setId] = useState(0);
+  const dispatch = useDispatch();
+  const [id, setId] = useState();
   const [showPopup, setShowPopup] = useState(false);
   const { users, loading, searchData } = useSelector((state) => state.appCrud);
 
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(showUser());
-  }, [dispatch]);
+  }, []);
 
   if (loading) {
     return <h2>Loading</h2>;

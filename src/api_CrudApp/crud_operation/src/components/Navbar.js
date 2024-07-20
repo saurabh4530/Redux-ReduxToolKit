@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 import { searchUser } from "../featuresCRUD/UserDetailsSlice";
 
 function Navbar() {
-  const [searchData,setSearchData]=useState("");
+  const allUsers=useSelector((state)=>state.appCrud.users)
   const dispatch=useDispatch()
+  const [searchData,setSearchData]=useState("");
   useEffect(()=>{
     dispatch(searchUser(searchData))
   },[searchData])
 
-  const allUsers=useSelector((state)=>state.appCrud.users)
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,7 +50,7 @@ function Navbar() {
               <input
                 className="form-control me-2 "
                 type="search"
-                placeholder="Search"
+                placeholder="Search user with name"
                 aria-label="Search"
                 onChange={(e)=>setSearchData(e.target.value)}
               />

@@ -9,7 +9,7 @@ export const createUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://666c260649dbc5d7145cd7eb.mockapi.io/userDetail",
+        "https://666c260649dbc5d7145cd7eb.mockapi.io/userDetail" ,
         data
       );
       return response.data;
@@ -79,7 +79,7 @@ export const userDetail = createSlice({
   reducers:{
     searchUser:(state,action)=>{
       state.searchData=action.payload
-    }
+    },
 
   },
   extraReducers: (builder) => {

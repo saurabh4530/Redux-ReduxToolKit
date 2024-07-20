@@ -17,7 +17,7 @@ function App() {
       {/* <Index/> */}
 
       {/* CRUD app and create async thunk */}
-   <h1>hello</h1>
+   <h1>CRUD Operations Using RTK & Async Thunk</h1>
    <BrowserRouter>
    <Navbar/>
    <Routes>

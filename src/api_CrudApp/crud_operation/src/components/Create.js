@@ -5,7 +5,14 @@ import { createUser } from "../featuresCRUD/UserDetailsSlice";
 import { useNavigate } from "react-router";
 
 function Create() {
-    const [users, setUsers] = useState({});
+    const [users, setUsers] = useState({
+      name: "",
+      email: "",
+      age:"",
+      gender:""
+      
+
+    });
    const navigate=useNavigate()
     const dispatch = useDispatch();
   const getUserData = (e) => {
